@@ -1,3 +1,5 @@
+using CqrsMediatr.Commands.Products;
+using CqrsMediatr.Models;
 using CqrsMediatr.Queries.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -23,10 +25,17 @@ namespace CqrsWebApi.Controllers
         }
 
 
-        [HttpGet("Id")]
+        [HttpGet("Id", Name = "GetProductById")]
         public IActionResult GetProductById(int Id)
         {
             return Ok(_sender.Send(new GetProductsByIdQuery(Id)));
+        }
+
+        [HttpPost()]
+        public async Task<IActionResult> AddProduct(Product product )
+        {
+            var productToReturn = _sender.Send(new AddProductCommand(product));
+            return CreatedAtRoute(nameof(GetProductById), new { id = productToReturn.Id }, productToReturn);
         }
 
 

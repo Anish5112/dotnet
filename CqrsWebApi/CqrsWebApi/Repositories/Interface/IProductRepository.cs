@@ -6,7 +6,7 @@ namespace CqrsMediatr.Repositories.Interface
 	{
 		Task<IEnumerable<Product>> GetProducts();
 		Task<Product?> GetProductById(int productId);
-
+        Task<Product?> AddProduct(Product product);
     }
 
 }

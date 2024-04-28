@@ -26,6 +26,12 @@ namespace CqrsMediatr.Repositories.ConcreteClass
         {
             return Task.FromResult(_products.FirstOrDefault(product => product.Id == productId));
         }
+
+        public Task<Product?> AddProduct(Product product)
+        {
+            _products.Add(product);
+            return Task.FromResult(product);
+        }
     }
 }
 
