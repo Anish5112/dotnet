@@ -1,9 +1,8 @@
-﻿using CqrsMediatr.Commands.Products;
-using CqrsMediatr.Models;
+﻿using CqrsMediatr.Models;
 using CqrsMediatr.Repositories.Interface;
 using MediatR;
 
-namespace CqrsMediatr.Handler.Products
+namespace CqrsMediatr.Commands.Products
 {
     public class AddProductHandler : IRequestHandler<AddProductCommand, Product>
     {

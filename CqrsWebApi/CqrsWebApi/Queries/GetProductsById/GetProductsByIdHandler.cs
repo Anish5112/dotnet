@@ -1,9 +1,8 @@
 ﻿using CqrsMediatr.Models;
-using CqrsMediatr.Queries.Products;
 using CqrsMediatr.Repositories.Interface;
 using MediatR;
 
-namespace CqrsMediatr.Handler.Products
+namespace CqrsMediatr.Queries.GetProductsById
 {
     public class GetProductsByIdHandler : IRequestHandler<GetProductsByIdQuery, Product>
     {
@@ -12,7 +11,7 @@ namespace CqrsMediatr.Handler.Products
 
         public async Task<Product> Handle(GetProductsByIdQuery request, CancellationToken cancellationToken)
         {
-           return  await _productRepository.GetProductById(request.Id);
+            return await _productRepository.GetProductById(request.Id);
         }
     }
 }

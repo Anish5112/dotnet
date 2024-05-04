@@ -1,9 +1,8 @@
 ﻿using CqrsMediatr.Models;
-using CqrsMediatr.Queries.Products;
 using CqrsMediatr.Repositories.Interface;
 using MediatR;
 
-namespace CqrsMediatr.Handler.Products
+namespace CqrsMediatr.Queries.GetProducts
 {
     public class GetProductsHandler : IRequestHandler<GetProductsQuery, IEnumerable<Product>>
     {

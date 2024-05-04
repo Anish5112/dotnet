@@ -1,6 +1,7 @@
 using CqrsMediatr.Commands.Products;
 using CqrsMediatr.Models;
-using CqrsMediatr.Queries.Products;
+using CqrsMediatr.Queries.GetProducts;
+using CqrsMediatr.Queries.GetProductsById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
